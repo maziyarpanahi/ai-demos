@@ -20,6 +20,8 @@
 - Keep every demo self-contained unless shared code is essential to understand
   or run it.
 - Add every demo to `CATALOG.md` and the root `README.md`.
+- Include a **Model(s)** column in demo indexes. Add newly verified models to
+  an existing demo row instead of creating duplicate rows for the same demo.
 - Do not commit secrets, private endpoints, private inputs, logs, or production
   receipts.
 - State local and hosted execution boundaries accurately.

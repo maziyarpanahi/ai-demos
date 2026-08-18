@@ -11,6 +11,10 @@ The reference idea uses Qwen3.8-27B, but the code works with any compatible
 vision model that accepts image input through an OpenAI-compatible chat
 completions endpoint.
 
+## See it in action
+
+[Watch the Qwen3.8-27B object-box demo on X](https://x.com/MaziyarPanahi/status/2089341222733431087).
+
 ## What you will learn
 
 - Send an image as a base64 data URL alongside a text prompt.

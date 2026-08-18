@@ -60,6 +60,8 @@ Link the original post only when there is a stable public URL.
 - Document the minimum Python or runtime version.
 - Record the exact model identifier and dependency versions used for a
   published result when known.
+- List verified model names in the demo’s existing **Model(s)** cell. Do not
+  duplicate a catalog row just to name another compatible model.
 - Add a lock file only when exact transitive versions are important to the
   technique.
 - Avoid shared repository packages unless several demos truly cannot remain
@@ -85,7 +87,8 @@ names and summaries.
 - [ ] Verify the expected output is accurate.
 - [ ] Remove secrets, local paths, generated logs, and private data.
 - [ ] Check all example assets and links.
-- [ ] Add the demo to `CATALOG.md` and the root `README.md`.
+- [ ] Add the demo and its verified model name to `CATALOG.md` and the root
+      `README.md` without duplicating an existing demo row.
 - [ ] Confirm the folder and title describe the outcome.
 - [ ] Keep unrelated production assets out of the change.
 
