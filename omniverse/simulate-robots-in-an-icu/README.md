@@ -23,7 +23,12 @@ the whole grid at 13.6 s, each rendered with `--still-at`.
 
 ## See it in action
 
-[Watch the 256-ward pull-back on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7521240619726503938/).
+![Three Microducks walk into an ICU ward, then the camera pulls back over 256 copies of the ward.](assets/icu-rounds-256.gif)
+
+The same 256-ward run as a 13-second clip: the three ducks in the middle ward
+walk in, then the camera pulls back over every ward. It was rendered with
+`python rounds.py --render out/rounds_256.npz --width 540 --height 675` and
+converted to GIF with ffmpeg.
 
 ## Why it is useful
 
@@ -88,6 +93,19 @@ Scale up on an NVIDIA GPU, then render the result with the same command:
 ```bash
 python rounds.py --worlds 256 --device cuda:0 --record out/rounds_256.npz
 python rounds.py --render out/rounds_256.npz
+```
+
+The simulation and the render can run on different machines. Copy the
+`.npz` file from the GPU machine to any machine with OpenGL, run
+`fetch_assets.py` there once, and render. The render rebuilds the scene and
+checks that it matches the recording before drawing anything.
+
+To make a GIF from the video, for example for a README, use the ffmpeg binary
+that `imageio[ffmpeg]` installs:
+
+```bash
+FFMPEG=$(python -c "import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())")
+"$FFMPEG" -ss 1 -i out/rounds_256.mp4 -vf "fps=10,scale=360:450:flags=lanczos,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer" out/rounds_256.gif
 ```
 
 Useful options:
