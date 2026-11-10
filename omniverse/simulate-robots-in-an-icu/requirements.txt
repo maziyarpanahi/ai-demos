@@ -1,0 +1,10 @@
+# Newton physics (MuJoCo Warp solver, OpenUSD and MJCF importers, OpenGL viewer)
+newton[examples]==1.7.0
+# the robot's RL policy
+onnxruntime>=1.20
+onnx>=1.17
+# downloads from the Hugging Face Hub and GitHub
+huggingface_hub>=1.0
+httpx>=0.27
+# MP4 writing for --render
+imageio[ffmpeg]>=2.37
